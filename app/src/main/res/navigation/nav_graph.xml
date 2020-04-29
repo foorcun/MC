@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/registerFragment">
+
+    <fragment
+        android:id="@+id/alreadyHaveAnAccountFragment"
+        android:name="com.example.cumaver10.AlreadyHaveAnAccountFragment"
+        android:label="fragment_already_have_an_account"
+        tools:layout="@layout/fragment_already_have_an_account" />
+    <fragment
+        android:id="@+id/homeFragment"
+        android:name="com.example.cumaver10.HomeFragment"
+        android:label="fragment_home"
+        tools:layout="@layout/fragment_home" >
+        <action
+            android:id="@+id/action_homeFragment_to_groupFragment"
+            app:destination="@id/groupFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_pickMessageFragment"
+            app:destination="@id/pickMessageFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/groupFragment"
+        android:name="com.example.cumaver10.GroupFragment"
+        android:label="fragment_group"
+        tools:layout="@layout/fragment_group" />
+    <fragment
+        android:id="@+id/pickMessageFragment"
+        android:name="com.example.cumaver10.PickMessageFragment"
+        android:label="fragment_pick_message"
+        tools:layout="@layout/fragment_pick_message" >
+        <action
+            android:id="@+id/action_pickMessageFragment_to_pickGroupFragment"
+            app:destination="@id/pickGroupFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/pickGroupFragment"
+        android:name="com.example.cumaver10.PickGroupFragment"
+        android:label="fragment_pick_group"
+        tools:layout="@layout/fragment_pick_group" >
+        <action
+            android:id="@+id/action_pickGroupFragment_to_controlSendFragment2"
+            app:destination="@id/controlSendFragment2" />
+    </fragment>
+    <fragment
+        android:id="@+id/controlSendFragment2"
+        android:name="com.example.cumaver10.ControlSendFragment"
+        android:label="fragment_control_send"
+        tools:layout="@layout/fragment_control_send" >
+        <action
+            android:id="@+id/action_controlSendFragment2_to_homeFragment"
+            app:destination="@id/homeFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/registerFragment"
+        android:name="com.example.cumaver10.RegisterFragment"
+        android:label="fragment_register"
+        tools:layout="@layout/fragment_register" >
+        <action
+            android:id="@+id/action_registerFragment_to_homeFragment"
+            app:destination="@id/homeFragment"
+
+
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+
+            app:popUpTo="@id/registerFragment"
+            app:popUpToInclusive="true"
+            />
+        <action
+            android:id="@+id/action_registerFragment_to_alreadyHaveAnAccountFragment"
+            app:destination="@id/alreadyHaveAnAccountFragment"
+
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+
+            />
+    </fragment>
+</navigation>
